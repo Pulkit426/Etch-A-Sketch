@@ -51,5 +51,7 @@ const colorPicker = document.createElement('input')
 colorPicker.setAttribute("type", "color")
 colorPicker.style = "width: 75px"
 colorPicker.textContent = "Chose a color"
+
+colorPicker.addEventListener('change', (e) => gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = e.target.value)))
 selection.appendChild(text)
 selection.appendChild(colorPicker)
