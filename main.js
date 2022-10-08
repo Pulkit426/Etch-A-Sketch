@@ -17,5 +17,5 @@ resetButton.addEventListener('click', resetGrid)
 resetButton.textContent = "Reset"
 selection.appendChild(resetButton)
 function resetGrid() {
-    gridItems.forEach(item => item.style.backgroundColor = "blueviolet")
+    gridItems.forEach(item => item.style.backgroundColor = "white")
 }
