@@ -55,3 +55,39 @@ colorPicker.textContent = "Chose a color"
 colorPicker.addEventListener('change', (e) => gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = e.target.value)))
 selection.appendChild(text)
 selection.appendChild(colorPicker)
+
+const slider = document.createElement('input')
+slider.setAttribute('type', 'range')
+slider.setAttribute('min', 5)
+slider.setAttribute('max', 100)
+slider.setAttribute('value', 16)
+slider.classList.add('slider')
+selection.appendChild(slider)
+
+const p= document.createElement('span')
+p.textContent = slider.value
+selection.appendChild(p)
+
+function removeGrid(parent){
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+slider.addEventListener('input', (e) => changeGrid(e))
+function changeGrid(e){
+    const value =  e.target.value
+    p.textContent = value
+    removeGrid(gridContainer)
+
+    for(let i=0;i<value*value;i++){
+        gridContainer.style = ` grid-template-columns: repeat(${value}, 2fr);
+        grid-template-rows: repeat(${value}, 2fr);`
+        const gridDiv = document.createElement('div')
+        gridDiv.classList.add('grid-item')
+        gridDiv.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = 'black'
+        })
+        gridContainer.appendChild(gridDiv)
+    }
+}

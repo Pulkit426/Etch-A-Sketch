@@ -27,6 +27,13 @@ button:hover{
 
 }
 
+.slider{
+  -webkit-appearance: none;
+  background: beige;
+  border-radius: 50px;
+  margin-left: 25px;
+}
+
 .grid-container{
   margin-top: 50px;
   display: inline-grid;
