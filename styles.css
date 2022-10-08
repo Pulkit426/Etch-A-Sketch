@@ -10,6 +10,19 @@ header{
   font-size: 50px;
 }
 
+button{
+  font-family: 'Oleo Script Swash Caps', cursive;
+  width: 80px;
+  font-size: 30px;
+  box-shadow: 5px 5px;
+  margin: 50px;
+}
+
+button:hover{
+  transform: scale(1.1);
+
+}
+
 .grid-container{
     background-color:blueviolet;
     height: 320px;

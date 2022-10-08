@@ -8,3 +8,14 @@ for(let i=0;i<256;i++){
     })
     gridContainer.appendChild(gridDiv)
 }
+
+const selection =  document.querySelector('.selection')
+console.log(selection)
+const resetButton = document.createElement('button')
+const gridItems = document.querySelectorAll('.grid-item')
+resetButton.addEventListener('click', resetGrid)
+resetButton.textContent = "Reset"
+selection.appendChild(resetButton)
+function resetGrid() {
+    gridItems.forEach(item => item.style.backgroundColor = "blueviolet")
+}
