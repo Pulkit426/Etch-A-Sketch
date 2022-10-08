@@ -11,32 +11,27 @@ for(let i=0;i<256;i++){
 
 const selection =  document.querySelector('.selection')
 console.log(selection)
-const resetButton = document.createElement('button')
+
+function createButton(buttonName, setFunction){
+const newButton = document.createElement('button')
+newButton.textContent = buttonName
+newButton.addEventListener('click', setFunction)
+selection.appendChild(newButton)
+}
+
 const gridItems = document.querySelectorAll('.grid-item')
-resetButton.addEventListener('click', resetGrid)
-resetButton.textContent = "Reset"
-selection.appendChild(resetButton)
 function resetGrid() {
     gridItems.forEach(item => item.style.backgroundColor = "white")
 }
-
-const blackButton = document.createElement('button')
-blackButton.textContent = 'Black'
-blackButton.addEventListener('click', setColorToBlack)
-selection.appendChild(blackButton)
 
 function setColorToBlack() {
     gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = "black"))
 }
 
-const RGBButton = document.createElement('button')
-RGBButton.textContent = 'RGB'
-RGBButton.addEventListener('click', setRandomColor)
-selection.appendChild(RGBButton)
-
 function setRandomColor() {
     gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = getRandomColor()))
 }
+
 function getRandomColor(){
     let x= Math.floor(Math.random()*256)
     let y= Math.floor(Math.random()*256)
@@ -44,3 +39,7 @@ function getRandomColor(){
     let bgColor= "rgb(" + x + "," + y + "," + z + ")"
     return bgColor
 }
+
+createButton("Reset", resetGrid)
+createButton("Black", setColorToBlack)
+createButton("RGB", setRandomColor)
