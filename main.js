@@ -43,3 +43,13 @@ function getRandomColor(){
 createButton("Reset", resetGrid)
 createButton("Black", setColorToBlack)
 createButton("RGB", setRandomColor)
+
+const text = document.createElement('span')
+text.textContent = "Chose a color"
+
+const colorPicker = document.createElement('input')
+colorPicker.setAttribute("type", "color")
+colorPicker.style = "width: 75px"
+colorPicker.textContent = "Chose a color"
+selection.appendChild(text)
+selection.appendChild(colorPicker)
