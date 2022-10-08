@@ -19,3 +19,28 @@ selection.appendChild(resetButton)
 function resetGrid() {
     gridItems.forEach(item => item.style.backgroundColor = "white")
 }
+
+const blackButton = document.createElement('button')
+blackButton.textContent = 'Black'
+blackButton.addEventListener('click', setColorToBlack)
+selection.appendChild(blackButton)
+
+function setColorToBlack() {
+    gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = "black"))
+}
+
+const RGBButton = document.createElement('button')
+RGBButton.textContent = 'RGB'
+RGBButton.addEventListener('click', setRandomColor)
+selection.appendChild(RGBButton)
+
+function setRandomColor() {
+    gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = getRandomColor()))
+}
+function getRandomColor(){
+    let x= Math.floor(Math.random()*256)
+    let y= Math.floor(Math.random()*256)
+    let z= Math.floor(Math.random()*256)
+    let bgColor= "rgb(" + x + "," + y + "," + z + ")"
+    return bgColor
+}
