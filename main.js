@@ -19,16 +19,19 @@ newButton.addEventListener('click', setFunction)
 selection.appendChild(newButton)
 }
 
-const gridItems = document.querySelectorAll('.grid-item')
+
 function resetGrid() {
+    const gridItems = document.querySelectorAll('.grid-item')
     gridItems.forEach(item => item.style.backgroundColor = "white")
 }
 
 function setColorToBlack() {
+    const gridItems = document.querySelectorAll('.grid-item')
     gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = "black"))
 }
 
 function setRandomColor() {
+    const gridItems = document.querySelectorAll('.grid-item')
     gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = getRandomColor()))
 }
 
@@ -52,7 +55,10 @@ colorPicker.setAttribute("type", "color")
 colorPicker.style = "width: 75px"
 colorPicker.textContent = "Chose a color"
 
-colorPicker.addEventListener('change', (e) => gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = e.target.value)))
+colorPicker.addEventListener('change', (e) => {
+    const gridItems = document.querySelectorAll('.grid-item')
+    gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = e.target.value))
+})
 selection.appendChild(text)
 selection.appendChild(colorPicker)
 
