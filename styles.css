@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+
+body{
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+header{
+  text-align: center;
+  padding: 20px;
+  font-size: 50px;
+}
+
 .grid-container{
     background-color:blueviolet;
     height: 320px;
