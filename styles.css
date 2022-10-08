@@ -3,6 +3,9 @@
 body{
   font-family: 'Oleo Script Swash Caps', cursive;
   background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header{
@@ -25,18 +28,19 @@ button:hover{
 }
 
 .grid-container{
-    height: 320px;
-    width: 320px;
-    display: grid;
-    grid-template-columns: repeat(16, 20px);
-    grid-template-rows: repeat(16, 20px);
-    align-items: center;
-    justify-content: space-around;
+  margin-top: 50px;
+  display: inline-grid;
+  grid-template-columns: repeat(16, 2fr);
+  grid-template-rows: repeat(16, 2fr);
+  border: 5px solid white;
+  border-radius: 5px;
+  height: 575px;
+  width: 575px;
+  box-shadow: 10px 10px;
 }
+
 
 .grid-item{
   background-color: white;
-  height: 20px;
-  width: 20px;
   border: 1px solid black;
 }
