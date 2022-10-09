@@ -59,20 +59,27 @@ colorPicker.addEventListener('change', (e) => {
     const gridItems = document.querySelectorAll('.grid-item')
     gridItems.forEach(item =>  item.addEventListener('mouseover', () => item.style.backgroundColor = e.target.value))
 })
-selection.appendChild(text)
-selection.appendChild(colorPicker)
 
+const colorPickerContainer = document.createElement('div')
+colorPickerContainer.classList.add('color-picker-container')
+colorPickerContainer.appendChild(text)
+colorPickerContainer.appendChild(colorPicker)
+selection.appendChild(colorPickerContainer)
+
+const sliderAndValue = document.createElement('div')
+sliderAndValue.classList.add('slider-and-value')
 const slider = document.createElement('input')
 slider.setAttribute('type', 'range')
 slider.setAttribute('min', 5)
 slider.setAttribute('max', 100)
 slider.setAttribute('value', 16)
 slider.classList.add('slider')
-selection.appendChild(slider)
 
 const p= document.createElement('span')
 p.textContent = slider.value
-selection.appendChild(p)
+sliderAndValue.appendChild(slider)
+sliderAndValue.appendChild(p)
+selection.appendChild(sliderAndValue)
 
 function removeGrid(parent){
     while(parent.firstChild){

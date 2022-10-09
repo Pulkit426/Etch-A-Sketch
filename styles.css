@@ -12,6 +12,15 @@ header{
   text-align: center;
   padding: 20px;
   font-size: 50px;
+  margin-bottom: 35px;
+}
+
+.selection{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 35px;
 }
 
 button{
@@ -19,7 +28,6 @@ button{
   width: 80px;
   font-size: 30px;
   box-shadow: 5px 5px;
-  margin: 50px;
 }
 
 button:hover{
@@ -27,11 +35,37 @@ button:hover{
 
 }
 
+.color-picker-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-and-value{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+}
+
 .slider{
   -webkit-appearance: none;
-  background: beige;
+  background: #DD8D8D;
   border-radius: 50px;
-  margin-left: 25px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  width: 25px; 
+  height: 25px; 
+  background: white; 
+  border-radius: 50px;
+}
+
+.grid-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-container{
@@ -54,7 +88,7 @@ button:hover{
 
 footer{
   text-align: center;
-  margin-top: 20px;
+  margin-top: 50px;
   padding: 5px;
 }
 
